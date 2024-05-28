@@ -12,42 +12,42 @@ const showingNavigationDropdown = ref(false);
 
 <template>
     <div class="">
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+        <div class="min-h-screen bg-gray-100 ">
             <nav
-                class="w-full bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700"
+                class="w-full bg-white  border-b border-gray-300  dark:border-gray-200"
             >
                 <!-- Primary Navigation Menu -->
-                <div class=" px-4 sm:px-6 lg:px-8 bg-black">
+                <div class=" px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
                         <div class="flex">
                             <!-- Logo -->
-                            <div class="shrink-0 flex items-center text-white text-xl tracking-widest">
-                                <!-- <Link :href="route('dashboard')">
+                            <div class="shrink-0 flex items-center text-black text-xl tracking-widest">
+                                <Link :href="route('dashboard')">
                                     <ApplicationLogo
-                                        class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200 text-white"
+                                        class="block h-9 w-auto fill-current text-black"
                                     />
-                                </Link> -->
-                            P<span class="text-red-900">U</span ><span class="text-green-900">U</span>GLE
+                                </Link> 
+                            
                             </div>
 
                             <!-- Navigation Links -->
                             <div
                                 class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex"
                             >
-                                <NavLink class="text-white"
+                                <NavLink class="text-black"
                                     :href="route('dashboard')"
                                     :active="route().current('dashboard')"
                                 >
                                     Dashboard
                                 </NavLink>
-                                <NavLink class="text-white"
+                                <NavLink class="text-black"
                                    
-                                    href="sales-book"
-                                    :active="route().current('sales-book')"
+                                    href="add-vendor"
+                                    :active="route().current('add-vendor')"
                                 >
-                                    Sales Book
+                                    Add Vendor
                                 </NavLink>
-                                <!-- <div
+                                <div
                                     class="hidden sm:flex sm:items-center sm:ms-6"
                                 >
                                   
@@ -61,10 +61,7 @@ const showingNavigationDropdown = ref(false);
                                                         type="button"
                                                         class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150"
                                                     >
-                                                        {{
-                                                            $page.props.auth
-                                                                .user.name
-                                                        }} 
+                                                         
                                                         Master
 
                                                         <svg
@@ -84,23 +81,17 @@ const showingNavigationDropdown = ref(false);
                                             </template>
 
                                             <template #content>
-                                                <DropdownLink href="/blogs">
-                                                    Blogs
+                                                <DropdownLink  :href="route('transactions.create')">
+                                                    Transaction
                                                 </DropdownLink>
-                                                <DropdownLink href="/sales-book">
-                                                    Sales-Book
+                                                <DropdownLink :href="route('invoices.index')">
+                                                    Invoice
                                                 </DropdownLink>
-                                                  <DropdownLink
-                                                    :href="route('logout')"
-                                                    method="post"
-                                                    as="button"
-                                                >
-                                                    Log Out
-                                                </DropdownLink> 
+                                                  
                                             </template>
                                         </Dropdown>
                                     </div>
-                                </div> -->
+                                </div>
                             </div>
                         </div>
 
@@ -112,7 +103,7 @@ const showingNavigationDropdown = ref(false);
                                         <span class="inline-flex rounded-md">
                                             <button
                                                 type="button"
-                                                class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150"
+                                                class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md  focus:outline-none transition ease-in-out duration-150 bg-black text-white"
                                             >
                                                 {{ $page.props.auth.user.name }}
 
@@ -255,7 +246,7 @@ const showingNavigationDropdown = ref(false);
             </header> -->
 
             <!-- Page Content -->
-            <main>
+            <main class=" bg-white">
                 <slot />
             </main>
         </div>

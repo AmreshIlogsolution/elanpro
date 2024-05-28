@@ -43,6 +43,8 @@ class BlogController extends Controller
             'title' => 'required|string|max:255',
             'content' => 'required'
         ]);
+
+        
         Blog::create([
             'title' => $request->title,
             'content' => $request->content

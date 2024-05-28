@@ -91,16 +91,25 @@ return [
            // 'prefix_indexes' => true,
             // 'encrypt' => env('DB_ENCRYPT', 'yes'),
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
-        ],
-        'elanpro_db' => [
-            'driver' => 'sqlsrv',
-            'host' => env('SECOND_DB_HOST', '192.168.146.79'),
-            'port' => env('SECOND_DB_PORT', '3306'),
-            'database' => env('SECOND_DB_DATABASE', 'forge'),
-            'username' => env('SECOND_DB_USERNAME', 'forge'),
-            'password' => env('SECOND_DB_PASSWORD', ''),
-            // ...
-        ],
+         ],
+        // 'vm_db1' => [
+        //     'driver' => 'sqlsrv',
+        //     'host' => env('SECOND_DB_HOST', '192.168.146.79'),
+        //     'port' => env('SECOND_DB_PORT', '3306'),
+        //     'database' => env('SECOND_DB_DATABASE', 'forge'),
+        //     'username' => env('SECOND_DB_USERNAME', 'forge'),
+        //     'password' => env('SECOND_DB_PASSWORD', ''),
+             
+        // ],
+        // 'vm_db2' => [
+        //     'driver' => 'sqlsrv',
+        //     'host' => env('THIRD_DB_HOST', '192.168.146.79'),
+        //     'port' => env('THIRD_DB_PORT', '3306'),
+        //     'database' => env('THIRD_DB_DATABASE', 'forge'),
+        //     'username' => env('THIRD_DB_USERNAME', 'forge'),
+        //     'password' => env('THIRD_DB_PASSWORD', ''),
+           
+        // ],
 
     ],
 

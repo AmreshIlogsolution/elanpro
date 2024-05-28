@@ -33,24 +33,29 @@ class InventoryController extends Controller
                     ->get();
                   
                   
-        $subparties = DB::connection('elanpro_db')
+                    $subparties = DB::connection('elanpro_db')
                     ->table('MstBusinessPartnerSub')
-                    ->select('Name','id')
+                    ->distinct()
+                    ->select('Name as subPartyName','id','PartyID as partyID')
                     ->get();
+        
 
         $currencies = DB::connection('elanpro_db')
                     ->table('MstCurrency')
                     ->select('Name','id')
                     ->get();
-        $itemsval = DB::connection('elanpro_db')
+                    $itemsval = DB::connection('elanpro_db')
                     ->table('MstItem')
                     ->distinct()
-                    ->select('name')                
+                      ->select('name','SalesUnitID as salesUnitID')                 
                     ->get();
-        $unitsval = DB::connection('elanpro_db')
+            
+            $unitsval = DB::connection('elanpro_db')
                     ->table('MstItemUnit')
-                    ->select('name')                
+                    ->distinct()
+                    ->select('name','ID')             
                     ->get();
+                    
         $salesExecutive = DB::connection('elanpro_db')
                     ->table('MstSalesTeam')
                     ->select('name')                

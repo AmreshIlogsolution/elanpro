@@ -4,9 +4,10 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use App\Http\Controllers\BlogController;
+use App\Http\Controllers\VendorController;
 use App\Http\Controllers\InventoryController;
-
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\InvoiceController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,11 +36,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::resource('blogs', BlogController::class);
+    Route::resource('add-vendor', VendorController::class);
+    Route::resource('/transactions', TransactionController::class);
+    Route::resource('/invoices', InvoiceController::class);
+    
 });
 
-Route::get('inventory-count',[InventoryController::class,'inventoryCount']);
-Route::get('/search-zones', [InventoryController::class, 'findzoneforSku']);
-Route::get('/sales-book',[InventoryController::class, 'salesBook']);
+// // Define Custom Verification Routes
+// Route::controller(VerificationController::class)->group(function() {
+//     Route::get('/email/verify', 'notice')->name('verification.notice');
+//     Route::get('/email/verify/{id}/{hash}', 'verify')->name('verification.verify');
+//     Route::post('/email/resend', 'resend')->name('verification.resend');
+    
+// });
 
 require __DIR__ . '/auth.php';

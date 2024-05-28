@@ -5,6 +5,8 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import InputError from "@/Components/InputError.vue";
 import { Head, useForm, Link } from "@inertiajs/vue3";
+import { ref } from 'vue';
+const showSection = ref(true);
 
 const props = defineProps({
     blogs: {
@@ -12,6 +14,7 @@ const props = defineProps({
         default: () => ({}),
     },
 });
+
 
 const form = useForm({
     title: "",
@@ -21,6 +24,9 @@ const form = useForm({
 const submit = () => {
     form.post(route("blogs.store"));
 };
+ 
+
+
 </script>
 
 <template>
